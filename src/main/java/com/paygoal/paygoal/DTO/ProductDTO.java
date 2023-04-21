@@ -1,18 +1,20 @@
 package com.paygoal.paygoal.DTO;
 
+import com.paygoal.paygoal.models.Product;
+
 public class ProductDTO {
-    Long id;
+    private Long id;
     private String name;
     private String description;
     private int price;
     private int stock;
 
-    public ProductDTO(Long id, String name, String description, int price, int stock) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.price = price;
-        this.stock = stock;
+    public ProductDTO(Product product) {
+        this.id = product.getId();
+        this.name = product.getName();
+        this.description = product.getDescription();
+        this.price = product.getPrice();
+        this.stock = product.getStock();
     }
 
     public Long getId() {
