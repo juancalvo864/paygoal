@@ -18,15 +18,15 @@ public class PaygoalApplication {
 	public CommandLineRunner initData(ProductRepository productRepository) {
 		return (args) -> {
 
-			Product vaso = new Product("Vaso","Vaso de vidrio esfumado, alto impacto.",80.00,10);
-			Product plato = new Product("Plato","Plato de ceramica, estilo cuadrado.",150.00,60);
-			Product mantel = new Product ("Mantel","Mantel impermiable de facil limpieza, antideslisante.",350.00,8);
+
+			Product vaso = new Product("Vaso","Vaso de plastico 500cc",12.00,50);
+			Product plato = new Product("Plato","Plato de carton descartable",10.00,100);
+			Product cubiertos = new Product("Cubiertos","Cubiertos descartables , alta resistencia",5.50,150);
+
 
 			productRepository.save(vaso);
 			productRepository.save(plato);
-			productRepository.save(mantel);
-
-
+			productRepository.save(cubiertos);
 		};
 	}
 

@@ -38,6 +38,10 @@ public class ProductController {
         return new ProductDTO( productService.findById(id).get());
     }
 
+    @GetMapping("/order/products")
+    public List<ProductDTO> orderPrice() {
+        return productService.orderPrice().stream().map(product -> new ProductDTO(product)).collect(Collectors.toList());
+    }
 
     @PostMapping("/products")
     public ResponseEntity<?> createProduct(@RequestBody NewProductDTO newProductDTO){
