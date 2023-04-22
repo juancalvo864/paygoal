@@ -18,6 +18,7 @@ public class PaygoalApplication {
 	public CommandLineRunner initData(ProductRepository productRepository) {
 		return (args) -> {
 
+
 			Product vaso = new Product("Vaso","Vaso de plastico 500cc",12.00,50);
 			Product plato = new Product("Plato","Plato de carton descartable",10.00,100);
 			Product cubiertos = new Product("Cubiertos","Cubiertos descartables , alta resistencia",5.50,150);
@@ -28,4 +29,5 @@ public class PaygoalApplication {
 			productRepository.save(cubiertos);
 		};
 	}
+
 }
