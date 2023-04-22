@@ -3,6 +3,7 @@ package com.paygoal.paygoal.controllers;
 import com.paygoal.paygoal.DTO.NewProductDTO;
 import com.paygoal.paygoal.DTO.ProductDTO;
 import com.paygoal.paygoal.DTO.UpdateProductDTO;
+import com.paygoal.paygoal.models.Product;
 import com.paygoal.paygoal.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
