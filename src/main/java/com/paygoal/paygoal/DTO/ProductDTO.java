@@ -9,12 +9,16 @@ public class ProductDTO {
     private Double price;
     private int stock;
 
+    private Boolean status;
+
+
     public ProductDTO(Product product) {
         this.id = product.getId();
         this.name = product.getName();
         this.description = product.getDescription();
         this.price = product.getPrice();
         this.stock = product.getStock();
+        this.status = product.getStatus();
     }
 
     public Long getId() {
@@ -35,5 +39,9 @@ public class ProductDTO {
 
     public int getStock() {
         return stock;
+    }
+
+    public Boolean getStatus() {
+        return status;
     }
 }
