@@ -24,12 +24,12 @@ public class ProductController {
     @GetMapping("/products")
     public List<ProductDTO> getAll() {
 
-        return productService.findAll().stream().map(prod -> new ProductDTO(prod)).collect(Collectors.toList());
+        return productService.findAll().stream().filter(product -> product.getStatus().equals(false)).map(prod -> new ProductDTO(prod)).collect(Collectors.toList());
 
     }
 
     @GetMapping("/product")
-    public ProductDTO getByName (String name){
+    public ProductDTO getByName (@RequestParam String name){
         return new ProductDTO( productService.findByName(name).get());
     }
 
@@ -58,5 +58,20 @@ public class ProductController {
             return new ResponseEntity<>(exception.getMessage(), HttpStatus.NOT_FOUND);
         }
     }
+
+    @PostMapping("/current/products/{id}")
+    public ResponseEntity<?> delete(@PathVariable Long id){
+        if(id == null) return new ResponseEntity<>("missing id", HttpStatus.FORBIDDEN);
+
+        try{
+            productService.deleteProduct(id);
+            return new ResponseEntity<>("deleted succesfully", HttpStatus.OK);
+        }catch (Exception exception){
+            return new ResponseEntity<>(exception.getMessage(), HttpStatus.FORBIDDEN);
+        }
+    }
+
+
+
 
 }
