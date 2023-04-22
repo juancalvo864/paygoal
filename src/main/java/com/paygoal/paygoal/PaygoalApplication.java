@@ -10,4 +10,5 @@ public class PaygoalApplication {
 		SpringApplication.run(PaygoalApplication.class, args);
 	}
 
+
 }

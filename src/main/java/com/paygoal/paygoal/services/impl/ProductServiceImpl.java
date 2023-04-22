@@ -8,8 +8,10 @@ import com.paygoal.paygoal.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -101,6 +103,10 @@ public class ProductServiceImpl implements ProductService {
         productRepository.save(selectProduct);
     }
 
+    @Override
+    public List<Product> orderPrice()  {
+       return productRepository.findAll().stream().sorted(Comparator.comparing(p -> p.getPrice())).collect(Collectors.toList());
+    }
 
 
 }

@@ -21,4 +21,7 @@ public interface ProductService {
 
     public void deleteProduct(Long id) throws Exception;
 
+    public List<Product> orderPrice() ;
+
+
 }
