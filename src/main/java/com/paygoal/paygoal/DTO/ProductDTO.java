@@ -6,7 +6,7 @@ public class ProductDTO {
     private Long id;
     private String name;
     private String description;
-    private int price;
+    private Double price;
     private int stock;
 
     public ProductDTO(Product product) {
@@ -29,7 +29,7 @@ public class ProductDTO {
         return description;
     }
 
-    public int getPrice() {
+    public Double getPrice() {
         return price;
     }
 
